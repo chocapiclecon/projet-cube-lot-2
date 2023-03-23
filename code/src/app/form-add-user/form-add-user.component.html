@@ -1,0 +1,146 @@
+<style>
+    :host {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 14px;
+      color: #333;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 8px 0;
+    }
+    p {
+      margin: 0;
+    }
+    .spacer {
+      flex: 1;
+    }
+    .toolbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      background-color: #0253A3;
+      color: white;
+      font-weight: 600;
+    }
+    footer {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      line-height: 20px;
+    }
+    footer a {
+      display: flex;
+      align-items: center;
+    }
+    .otherContent{
+      /* display: flex; */
+      margin: 200px auto 80px;
+      background-color: rgb(198, 198, 198);
+      padding: 50px;
+      max-width: 960px;
+      flex-direction: column;
+      align-items: center;
+    }
+    input[type='text'], input[type='email'], input[type='date'], input[type='password'], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+  /* label{
+  font-size: large;
+  } */
+  h1{
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  </style>
+  <div style="background-color: #0253A3;">
+
+    <!-- Toolbar -->
+    <header class="toolbar" role="banner">
+      <span>Welcome</span>
+    </header>
+<form #monForm=ngForm (ngSubmit)="addUser" class="otherContent">
+    <h1 for="title">Créer votre Compte</h1>
+    <div>
+        Nom : <input type="text" name="nom" [(ngModel)]=user.nom required #nom="ngModel">
+    </div>
+    <div [hidden]="nom.valid || nom.pristine">
+        Le nom est obligatoire
+    </div>
+    <div>
+        Prenom : <input type="text" name="prenom" [(ngModel)]=user.prenom required #prenom="ngModel">
+    </div>
+    <div [hidden]="prenom.valid || prenom.pristine">
+        Le prenom est obligatoire
+    </div>
+    <div>
+        Date de naissance : <input type="date" name="dateNaissance" [(ngModel)]=user.dateNaissance required #dateNaissance="ngModel">
+    </div>
+    <div [hidden]="dateNaissance.valid || dateNaissance.pristine">
+        La date de naissance est obligatoire
+    </div>
+    <div>
+        Email : <input type="email" name="mail" [(ngModel)]=user.mail required #mail="ngModel">
+    </div>
+    <div [hidden]="mail.valid || mail.pristine">
+        Le Email est obligatoire
+    </div>
+    <div>
+        Nom d'utilisateur : <input type="text" name="userName" [(ngModel)]=user.userName required #userName="ngModel">
+    </div>
+    <div [hidden]="userName.valid || userName.pristine">
+        Le nom d'utilisateur est obligatoire
+    </div>
+    <div>
+        Mot de passe : <input type="password" name="mdp" [(ngModel)]=user.mdp required #mdp="ngModel">
+    </div>
+    <div [hidden]="mdp.valid || mdp.pristine">
+        Le mot de passe est obligatoire
+    </div>
+    <div>
+        Confirmer le mot de passe : <input type="password" name="confirmMdp" [(ngModel)]=user.confirmMdp required #confirmMdp="ngModel">
+    </div>
+    <div [hidden]="confirmMdp.valid || confirmMdp.pristine">
+        La confirmation du mot de passe est obligatoire
+    </div>
+    <div style="text-align: center;">
+        <input type="checkbox" id="acceptCondition" name="acceptCondition" required>
+        J’accepte les conditions générales .......
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <input type="checkbox" id="acceptMail" name="acceptMail">
+        J’accepte que le ministere ..... m’envoie des mails  .....
+    </div>
+    <br>
+    <div style="text-align: center">
+        <button [disabled]=!monForm.valid (click)="addUser(monForm)">
+            Ajouter
+        </button>
+    </div>
+</form>
+</div>
+
+<br>
+<h5>Afficher la personne que l'on ajoute : </h5>
+<li *ngFor="let elt of users">
+    {{ elt.nom }} {{ elt.prenom }}
+</li>
+<br>

@@ -30,7 +30,7 @@
       height: 60px;
       display: flex;
       align-items: center;
-      background-color: #1976d2;
+      background-color: #0253A3;
       color: white;
       font-weight: 600;
     }
@@ -47,13 +47,13 @@
     .otherContent{
       display: flex;
       margin: 200px auto 80px;
-      background-color: #5da9f5;
-      padding: 0 16px;
+      background-color: rgb(198, 198, 198);
+      padding: 50px;
       max-width: 960px;
       flex-direction: column;
       align-items: center;
     }
-    input[type=text], select {
+    input, select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -62,28 +62,33 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
+label{
+font-size: large;
+}
   </style>
+<div style="background-color: #0253A3;">
 
   <!-- Toolbar -->
   <header class="toolbar" role="banner">
     <span>Welcome</span>
   </header>
 
-<form class="otherContent">
+  <form class="otherContent" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div>
-    <label>Identifiant * :</label>
-    <input type="text" name="id" id="id" required>
+    <label for="userName">Identifiant * :</label>
+    <input type="text" formControlName="userName" id="userName" required>
     <br>
-    <label>Mot de passe * :</label>
-    <input type="text" name="mdp" id="mdp" required>
+    <label for="mdp">Mot de passe * :</label>
+    <input type="password" formControlName="mdp" id="mdp" required>
     <br>
   </div>
-    <button>Se connecter</button>
+    <button class="button" type="submit">Se connecter</button>
     <br>
     <div>
       <a href="">Mot de passe oublié ?</a>
       <a href="http://localhost:4200/add-user">Créer un compte</a>
     </div>
 </form>
+</div>
   <router-outlet></router-outlet>
   
