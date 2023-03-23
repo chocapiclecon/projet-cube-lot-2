@@ -26,7 +26,7 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 60px;
+      height: 80px;
       display: flex;
       align-items: center;
       background-color: #0253A3;
@@ -71,9 +71,8 @@
   }
   </style>
   <div style="background-color: #0253A3;">
-
     <!-- Toolbar -->
-    <header class="toolbar" role="banner">
+    <header class="toolbar" role="banner" style="font-size: xx-large;">
       <span>Welcome</span>
     </header>
 <form #monForm=ngForm (ngSubmit)="addUser" class="otherContent">
@@ -95,6 +94,12 @@
     </div>
     <div [hidden]="dateNaissance.valid || dateNaissance.pristine">
         La date de naissance est obligatoire
+    </div>
+    <div>
+        Ville: <input type="text" name="ville" [(ngModel)]=user.ville required #ville="ngModel">
+    </div>
+    <div [hidden]="ville.valid || ville.pristine">
+        La ville est obligatoire
     </div>
     <div>
         Email : <input type="email" name="mail" [(ngModel)]=user.mail required #mail="ngModel">

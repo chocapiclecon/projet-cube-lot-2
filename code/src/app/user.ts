@@ -3,6 +3,7 @@ export interface User {
     nom? : string
     prenom? : string
     dateNaissance?: Date,
+    ville?: string,
     mail?: string,
     userName?: string,
     mdp?: string,

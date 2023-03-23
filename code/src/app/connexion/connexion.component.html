@@ -69,11 +69,13 @@ font-size: large;
 <div style="background-color: #0253A3;">
 
   <!-- Toolbar -->
-  <header class="toolbar" role="banner">
+  <header class="toolbar" role="banner" style="font-size: xx-large;">
     <span>Welcome</span>
   </header>
 
   <form class="otherContent" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h1 for="title">Connexion</h1>
+    <br>
   <div>
     <label for="userName">Identifiant * :</label>
     <input type="text" formControlName="userName" id="userName" required>
