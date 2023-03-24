@@ -7,10 +7,12 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormAddUserComponent } from './form-add-user/form-add-user.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     ConnexionComponent,
     AddUserComponent,
     FormAddUserComponent,
