@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'add-user', component: AddUserComponent},
   {path: 'form-add-user', component: FormAddUserComponent},
   {path: 'accueil', component: acceuilComponent},
+  {path: '', component: acceuilComponent},
 
 ];
 
