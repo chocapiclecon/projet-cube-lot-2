@@ -1,0 +1,95 @@
+
+<style>
+    :host {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 14px;
+      color: #333;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 8px 0;
+    }
+    p {
+      margin: 0;
+    }
+    .spacer {
+      flex: 1;
+    }
+    .toolbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      background-color: #0253A3;
+      color: white;
+      font-weight: 600;
+    }
+    footer {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      line-height: 20px;
+    }
+    footer a {
+      display: flex;
+      align-items: center;
+    }
+    .otherContent{
+      display: flex;
+      margin: 200px auto 80px;
+      background-color: rgb(198, 198, 198);
+      padding: 50px;
+      max-width: 960px;
+      flex-direction: column;
+      align-items: center;
+    }
+    input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+label{
+font-size: large;
+}
+  </style>
+<div style="background-color: #0253A3;">
+
+  <!-- Toolbar -->
+  <header class="toolbar" role="banner" style="font-size: xx-large;">
+    <span>Welcome</span>
+  </header>
+  <!-- (ngSubmit)="onSubmit()" -->
+  <form class="otherContent" [formGroup]="loginForm">
+    <h1 for="title">Connexion</h1>
+    <br>
+  <div>
+    <label for="userName">Identifiant ou Mail * :</label>
+    <input type="text" formControlName="userName" id="userName" required>
+    <br>
+    <label for="mdp">Mot de passe * :</label>
+    <input type="password" formControlName="mdp" id="mdp" required>
+    <br>
+  </div>
+    <button class="button" type="submit" routerLink="/accueil">Se connecter</button>
+    <br>
+    <div>
+      <a href="">Mot de passe oublié ?</a>
+      <a href="http://localhost:4200/form-add-user">Créer un compte</a>
+    </div>
+</form>
+</div>
+  <router-outlet></router-outlet>
