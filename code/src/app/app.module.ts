@@ -7,6 +7,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormAddUserComponent } from './form-add-user/form-add-user.component';
 import { HeaderComponent } from './header/header.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent,
     ConnexionComponent,
     FormAddUserComponent,
+    ForgetPasswordComponent,
   ],
   imports: [
     BrowserModule,
