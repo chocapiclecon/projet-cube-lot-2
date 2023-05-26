@@ -1,92 +1,94 @@
 <html>
-    <body style="background-color: #0253A3;">
-        <header style="background-color: white;">
-            <img
-                width="200"
-                height="140"
-                alt="Logo du ministère de la santé et de la prévention"
-                src="assets/Ministère_de_la_Santé_et_de_la_Prévention.svg.png"
-            />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <img
-                width="170"
-                height="150"
-                alt="Logo Resources Relationel"
-                src="assets/ReSourcesRelationel.png"
-            />
-        </header>
-        <form #monForm=ngForm (ngSubmit)="addUser" class="otherContent">
-            <h1 for="title">Créer votre Compte</h1>
-            <div>
-                Nom : <input type="text" name="nom" [(ngModel)]=user.nom required #nom="ngModel">
-            </div>
-            <div [hidden]="nom.valid || nom.pristine">
-                Le nom est obligatoire
-            </div>
-            <div>
-                Prenom : <input type="text" name="prenom" [(ngModel)]=user.prenom required #prenom="ngModel">
-            </div>
-            <div [hidden]="prenom.valid || prenom.pristine">
-                Le prenom est obligatoire
-            </div>
-            <div>
-                Date de naissance : <input type="date" name="dateNaissance" [(ngModel)]=user.dateNaissance required #dateNaissance="ngModel">
-            </div>
-            <div [hidden]="dateNaissance.valid || dateNaissance.pristine">
-                La date de naissance est obligatoire
-            </div>
-            <div>
-                Ville: <input type="text" name="ville" [(ngModel)]=user.ville required #ville="ngModel">
-            </div>
-            <div [hidden]="ville.valid || ville.pristine">
-                La ville est obligatoire
-            </div>
-            <div>
-                Email : <input type="email" name="mail" [(ngModel)]=user.mail required #mail="ngModel">
-            </div>
-            <div [hidden]="mail.valid || mail.pristine">
-                Le Email est obligatoire
-            </div>
-            <div>
-                Nom d'utilisateur : <input type="text" name="userName" [(ngModel)]=user.userName required #userName="ngModel">
-            </div>
-            <div [hidden]="userName.valid || userName.pristine">
-                Le nom d'utilisateur est obligatoire
-            </div>
-            <div>
-                Mot de passe : <input type="password" name="mdp" [(ngModel)]=user.mdp required #mdp="ngModel">
-            </div>
-            <div [hidden]="mdp.valid || mdp.pristine">
-                Le mot de passe est obligatoire
-            </div>
-            <div>
-                Confirmer le mot de passe : <input type="password" name="confirmMdp" [(ngModel)]=user.confirmMdp required #confirmMdp="ngModel">
-            </div>
-            <div [hidden]="confirmMdp.valid || confirmMdp.pristine">
-                La confirmation du mot de passe est obligatoire
-            </div>
-            <div style="text-align: center;">
-                <input type="checkbox" id="acceptCondition" name="acceptCondition" required>
-                J’accepte les conditions générales .......
-            </div>
-            <br>
-            <div style="text-align: center;">
-                <input type="checkbox" id="acceptMail" name="acceptMail">
-                J’accepte que le ministere ..... m’envoie des mails  .....
-            </div>
-            <br>
-            <div style="text-align: center">
-                <button [disabled]=!monForm.valid (click)="addUser(monForm)" routerLink="/connexion">
-                    Ajouter
-                </button>
-            </div>
-        </form>
+    <body class="greyContent">
+        <div class="blueContent">
+            <header style="background-color: white;">
+                <img
+                    width="200"
+                    height="140"
+                    alt="Logo du ministère de la santé et de la prévention"
+                    src="assets/Ministère_de_la_Santé_et_de_la_Prévention.svg.png"
+                />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img
+                    width="170"
+                    height="150"
+                    alt="Logo Resources Relationel"
+                    src="assets/ReSourcesRelationel.png"
+                />
+            </header>
+            <form #monForm=ngForm (ngSubmit)="addUser" class="otherContent">
+                <h1 for="title">Créer votre Compte</h1>
+                <div>
+                    Nom : <input type="text" name="nom" [(ngModel)]=user.nom required #nom="ngModel">
+                </div>
+                <div [hidden]="nom.valid || nom.pristine">
+                    Le nom est obligatoire
+                </div>
+                <div>
+                    Prenom : <input type="text" name="prenom" [(ngModel)]=user.prenom required #prenom="ngModel">
+                </div>
+                <div [hidden]="prenom.valid || prenom.pristine">
+                    Le prenom est obligatoire
+                </div>
+                <div>
+                    Date de naissance : <input type="date" name="dateNaissance" [(ngModel)]=user.dateNaissance required #dateNaissance="ngModel">
+                </div>
+                <div [hidden]="dateNaissance.valid || dateNaissance.pristine">
+                    La date de naissance est obligatoire
+                </div>
+                <div>
+                    Ville: <input type="text" name="ville" [(ngModel)]=user.ville required #ville="ngModel">
+                </div>
+                <div [hidden]="ville.valid || ville.pristine">
+                    La ville est obligatoire
+                </div>
+                <div>
+                    Email : <input type="email" name="mail" [(ngModel)]=user.mail required #mail="ngModel">
+                </div>
+                <div [hidden]="mail.valid || mail.pristine">
+                    Le Email est obligatoire
+                </div>
+                <div>
+                    Nom d'utilisateur : <input type="text" name="userName" [(ngModel)]=user.userName required #userName="ngModel">
+                </div>
+                <div [hidden]="userName.valid || userName.pristine">
+                    Le nom d'utilisateur est obligatoire
+                </div>
+                <div>
+                    Mot de passe : <input type="password" name="mdp" [(ngModel)]=user.mdp required #mdp="ngModel">
+                </div>
+                <div [hidden]="mdp.valid || mdp.pristine">
+                    Le mot de passe est obligatoire
+                </div>
+                <div>
+                    Confirmer le mot de passe : <input type="password" name="confirmMdp" [(ngModel)]=user.confirmMdp required #confirmMdp="ngModel">
+                </div>
+                <div [hidden]="confirmMdp.valid || confirmMdp.pristine">
+                    La confirmation du mot de passe est obligatoire
+                </div>
+                <div style="text-align: center;">
+                    <input type="checkbox" id="acceptCondition" name="acceptCondition" required>
+                    J’accepte les conditions générales .......
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <input type="checkbox" id="acceptMail" name="acceptMail">
+                    J’accepte que le ministere ..... m’envoie des mails  .....
+                </div>
+                <br>
+                <div style="text-align: center">
+                    <button [disabled]=!monForm.valid (click)="addUser(monForm)" routerLink="/connexion">
+                        Ajouter
+                    </button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
 
-<br>
+<!-- <br>
 <h5>Afficher la personne que l'on ajoute : </h5>
 <li *ngFor="let elt of users">
     {{ elt.nom }} {{ elt.prenom }}
 </li>
-<br>
+<br> -->
