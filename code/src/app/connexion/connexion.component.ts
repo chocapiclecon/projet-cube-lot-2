@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class ConnexionComponent {
 
   loginForm = this.formBuilder.group({
-    userName: '',
+    mail: '',
     mdp: ''
   });
 

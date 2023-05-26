@@ -25,16 +25,22 @@
                     Le nom est obligatoire
                 </div>
                 <div>
-                    Prenom : <input type="text" name="prenom" [(ngModel)]=user.prenom required #prenom="ngModel">
+                    Prénom : <input type="text" name="prenom" [(ngModel)]=user.prenom required #prenom="ngModel">
                 </div>
                 <div [hidden]="prenom.valid || prenom.pristine">
-                    Le prenom est obligatoire
+                    Le prénom est obligatoire
                 </div>
                 <div>
-                    Date de naissance : <input type="date" name="dateNaissance" [(ngModel)]=user.dateNaissance required #dateNaissance="ngModel">
+                    Date de naissance : <input type="date" name="datenaiss" [(ngModel)]=user.datenaiss required #datenaiss="ngModel">
                 </div>
-                <div [hidden]="dateNaissance.valid || dateNaissance.pristine">
+                <div [hidden]="datenaiss.valid || datenaiss.pristine">
                     La date de naissance est obligatoire
+                </div>
+                <div>
+                    Code postal: <input type="number" name="code_postal" [(ngModel)]=user.code_postal required #code_postal="ngModel">
+                </div>
+                <div [hidden]="code_postal.valid || code_postal.pristine">
+                    La code postal est obligatoire
                 </div>
                 <div>
                     Ville: <input type="text" name="ville" [(ngModel)]=user.ville required #ville="ngModel">
@@ -49,9 +55,9 @@
                     Le Email est obligatoire
                 </div>
                 <div>
-                    Nom d'utilisateur : <input type="text" name="userName" [(ngModel)]=user.userName required #userName="ngModel">
+                    Nom d'utilisateur : <input type="text" name="pseudo" [(ngModel)]=user.pseudo required #pseudo="ngModel">
                 </div>
-                <div [hidden]="userName.valid || userName.pristine">
+                <div [hidden]="pseudo.valid || pseudo.pristine">
                     Le nom d'utilisateur est obligatoire
                 </div>
                 <div>
@@ -61,12 +67,12 @@
                     Le mot de passe est obligatoire
                 </div>
                 <div>
-                    Confirmer le mot de passe : <input type="password" name="confirmMdp" [(ngModel)]=user.confirmMdp required #confirmMdp="ngModel">
+                    Confirmer le mot de passe : <input type="password" name="mdpConfirm">
                 </div>
-                <div [hidden]="confirmMdp.valid || confirmMdp.pristine">
+                <div [hidden]="mdp.valid || mdp.pristine">
                     La confirmation du mot de passe est obligatoire
                 </div>
-                <div style="text-align: center;">
+                <!-- <div style="text-align: center;">
                     <input type="checkbox" id="acceptCondition" name="acceptCondition" required>
                     J’accepte les conditions générales .......
                 </div>
@@ -74,7 +80,7 @@
                 <div style="text-align: center;">
                     <input type="checkbox" id="acceptMail" name="acceptMail">
                     J’accepte que le ministere ..... m’envoie des mails  .....
-                </div>
+                </div> -->
                 <br>
                 <div style="text-align: center">
                     <button [disabled]=!monForm.valid (click)="addUser(monForm)" routerLink="/connexion">

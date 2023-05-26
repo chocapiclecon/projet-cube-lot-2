@@ -12,11 +12,12 @@ export class FormAddUserComponent implements OnInit {
   addForm = this.formBuilder.group({
     nom: '',
     prenom: '',
-    dateNaissance: '',
+    datenaiss: '',
+    code_postal: '',
+    ville:'',
     mail: '',
-    userName: '',
+    pseudo: '',
     mdp: '',
-    confirmMdp: '',
     acceptCondition: false,
     acceptMail: false,
   });

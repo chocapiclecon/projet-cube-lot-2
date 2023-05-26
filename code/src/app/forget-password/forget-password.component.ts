@@ -8,10 +8,9 @@ import { FormBuilder } from '@angular/forms';
 })
 export class ForgetPasswordComponent {
   forgetPasswordForm = this.formBuilder.group({
-    userName: '',
-    dateNaissance: '',
+    mail: '',
+    datenaiss: '',
     mdp: '',
-    confirmMdp: '',
   });
 
   constructor(
