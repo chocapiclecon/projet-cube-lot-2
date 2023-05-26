@@ -47,7 +47,7 @@
     .otherContent{
       display: flex;
       margin: 200px auto 80px;
-      background-color: rgb(198, 198, 198);
+      background-color: rgb(219, 219, 219);
       padding: 50px;
       max-width: 960px;
       flex-direction: column;
@@ -66,30 +66,40 @@ label{
 font-size: large;
 }
   </style>
-<div style="background-color: #0253A3;">
-
-  <!-- Toolbar -->
-  <header class="toolbar" role="banner" style="font-size: xx-large;">
-    <span>Welcome</span>
+  
+<body style="background-color: #0253A3;">
+  <header style="background-color: white;">
+    <img
+         width="200"
+         height="140"
+         alt="Logo du ministère de la santé et de la prévention"
+         src="assets/Ministère_de_la_Santé_et_de_la_Prévention.svg.png"
+    />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img
+         width="170"
+         height="150"
+         alt="Logo Resources Relationel"
+         src="assets/ReSourcesRelationel.png"
+    />
   </header>
-  <!-- (ngSubmit)="onSubmit()" -->
   <form class="otherContent" [formGroup]="loginForm">
-    <h1 for="title">Connexion</h1>
-    <br>
-  <div>
-    <label for="userName">Identifiant ou Mail * :</label>
-    <input type="text" formControlName="userName" id="userName" required>
-    <br>
-    <label for="mdp">Mot de passe * :</label>
-    <input type="password" formControlName="mdp" id="mdp" required>
-    <br>
-  </div>
-    <button class="button" type="submit" routerLink="/accueil">Se connecter</button>
-    <br>
+      <h1 for="title">Connexion</h1>
+      <br>
     <div>
-      <a href="http://localhost:4200/forget-password">Mot de passe oublié ?</a>
-      <a href="http://localhost:4200/form-add-user">Créer un compte</a>
+      <label for="userName">Identifiant ou Mail * :</label>
+      <input type="text" formControlName="userName" id="userName" required>
+      <br>
+      <label for="mdp">Mot de passe * :</label>
+      <input type="password" formControlName="mdp" id="mdp" required>
+      <br>
     </div>
-</form>
-</div>
+      <button class="button" type="submit" routerLink="/accueil">Se connecter</button>
+      <br>
+      <div>
+        <a href="http://localhost:4200/forget-password">Mot de passe oublié ?</a>
+        <a href="http://localhost:4200/form-add-user">Créer un compte</a>
+      </div>
+  </form>
+</body>
   <router-outlet></router-outlet>
