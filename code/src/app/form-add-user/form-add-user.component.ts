@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-form-add-user',
@@ -8,7 +9,19 @@ import { User } from '../user';
 })
 export class FormAddUserComponent implements OnInit {
 
-
+  addForm = this.formBuilder.group({
+    nom: '',
+    prenom: '',
+    datenaiss: '',
+    code_postal: '',
+    ville:'',
+    mail: '',
+    pseudo: '',
+    mdp: '',
+    acceptCondition: false,
+    acceptMail: false,
+  });
+  
   users: Array<User> = []
   user: User = { }
   addUser(form:any): void {
@@ -17,7 +30,9 @@ export class FormAddUserComponent implements OnInit {
     form.reset();
     console.log("Cette personne",this.users);
   }
-  constructor() { }
-  ngOnInit() { }
+  ngOnInit() {}
+  constructor(
+    private formBuilder: FormBuilder,
+  ) {}
 
 }

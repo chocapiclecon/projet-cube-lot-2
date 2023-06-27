@@ -1,11 +1,14 @@
 export interface User {
     id? : number
+    id_ressource?: number,
     nom? : string
     prenom? : string
-    dateNaissance?: Date,
+    datenaiss?: Date,
+    code_postal?: number,
     ville?: string,
-    mail?: string,
-    userName?: string,
+    role?: number,
+    status?: number,
     mdp?: string,
-    confirmMdp?: string,
+    mail?: string,
+    pseudo?: string,
 }
