@@ -1,0 +1,62 @@
+<html>
+    <body class="greyContent">
+        <div class="blueContent">
+            <header style="background-color: white;">
+                <img
+                    width="200"
+                    height="140"
+                    alt="Logo du ministère de la santé et de la prévention"
+                    src="assets/Ministère_de_la_Santé_et_de_la_Prévention.svg.png"
+                />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img
+                    width="170"
+                    height="150"
+                    alt="Logo Resources Relationel"
+                    src="assets/ReSourcesRelationel.png"
+                />
+            </header>
+            <!-- Faire une liste de toutes les ressources -->
+        </div>
+        <!-- <div class="whiteContent">
+            <h1>Liste des Livres</h1>
+            <button class="button" type="button" routerLink="/livre-ressource-add">Ajouter</button>
+            <br> -->
+            <!-- Pour voir la ressource faire = routerLink="/ressource/detail/id" -->
+            <!-- <button>Voir la ressource</button>
+              <mat-selection-list #livres [multiple]="false">
+                <mat-list-option *ngFor="let livre of allLivres"  [value]="livre">
+                  {{livre}}
+                </mat-list-option>
+              </mat-selection-list>
+              <p>
+                Option selected: {{livres.selectedOptions.hasValue() ? livres.selectedOptions.selected[0].value : 'None'}}
+              </p>
+        </div> -->
+        <div class="whiteContent">
+            <h1>Liste des Livres</h1>
+            <button class="button" type="button" routerLink="/livre-ressource-add">Ajouter</button>
+            <br>
+            <!-- Pour voir la ressource faire = routerLink="/ressource/detail/id" -->
+            <button class="button" type="button" routerLink="/livre-ressource-detail">Voir la ressource</button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Autor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let livre of livres; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>
+                            {{ livre.name }}
+                        </td>
+                        <td>{{ livre.auteur }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
