@@ -83,3 +83,27 @@ h1{
 table {
   width: 100%;
 }
+.buttonAccueil {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  left: 500px;
+  top: 100px;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}

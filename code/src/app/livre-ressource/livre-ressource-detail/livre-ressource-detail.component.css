@@ -80,3 +80,10 @@ h1{
   background-color: rgb(210, 210, 210);
   padding: 50px;
 }
+.buttonAccueil {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  left: 500px;
+  top: 100px;
+}

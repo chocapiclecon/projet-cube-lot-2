@@ -3,6 +3,7 @@
         <div class="blueContent">
             <header style="background-color: white;">
                 <img
+                    style="margin-left: 10px;"
                     width="200"
                     height="140"
                     alt="Logo du ministère de la santé et de la prévention"
@@ -10,21 +11,25 @@
                 />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <img
+                    style="margin-top: 10px;"
                     width="170"
                     height="150"
                     alt="Logo Resources Relationel"
                     src="assets/ReSourcesRelationel.png"
                 />
+                <button class="buttonAccueil" routerLink="/accueil">Acceuil</button>
+                <button style="position: fixed; right: 70px; top: 120px;" routerLink="/connexion">Connexion</button>
+                <input style="position: fixed; right: 200px; top: 120px;" matInput  value="Recherche">
             </header>
             <!-- Faire une liste de toutes les ressources -->
         </div>
         <div class="whiteContent">
             <h1>Liste des Vidéos</h1>
-            <button class="button" type="button" routerLink="/video-ressource-add">Ajouter</button>
-            <br>
+            <button style="right: 70px; position: absolute;" type="button" routerLink="/video-ressource-detail">Voir la ressource</button>
+            <button style="right: 200px; position: absolute;" type="button" routerLink="/video-ressource-add">Ajouter</button>
+            <br><br>
             <!-- Pour voir la ressource faire = routerLink="/ressource/detail/id" -->
-            <button class="button" type="button" routerLink="/video-ressource-detail">Voir la ressource</button>
-            <table class="table table-striped">
+            <table id="customers">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

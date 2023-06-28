@@ -3,6 +3,7 @@
         <div class="blueContent">
             <header style="background-color: white;">
                 <img
+                    style="margin-left: 10px;"
                     width="200"
                     height="140"
                     alt="Logo du ministère de la santé et de la prévention"
@@ -10,11 +11,15 @@
                 />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <img
+                    style="margin-top: 10px;"
                     width="170"
                     height="150"
                     alt="Logo Resources Relationel"
                     src="assets/ReSourcesRelationel.png"
                 />
+                <button class="buttonAccueil" routerLink="/accueil">Acceuil</button>
+                <button style="position: fixed; right: 70px; top: 120px;" routerLink="/connexion">Connexion</button>
+                <input style="position: fixed; right: 200px; top: 120px;" matInput  value="Recherche">
             </header>
             <form #monForm=ngForm (ngSubmit)="addRessource" class="otherContent">
                 <h1 for="title">Ajout d'une ressource dans livre</h1>
@@ -25,7 +30,8 @@
                     Le titre est obligatoire
                 </div>
                 <div>
-                    Description * : <input type="text" name="description" [(ngModel)]=ressource.description required #description="ngModel">
+                    Description * :
+                    <textarea name="description" [(ngModel)]=ressource.description required #description="ngModel" id="description" cols="30" rows="10"></textarea>
                 </div>
                 <div [hidden]="description.valid || description.pristine">
                     La description est obligatoire
@@ -62,6 +68,7 @@
                 </div>
                 <br>
                 <div style="text-align: center">
+                <button routerLink="/livre-ressource-list">Retour</button>
                     <button [disabled]=!monForm.valid (click)="addRessource(monForm)">
                     <!-- <button [disabled]=!monForm.valid (click)="addRessource(monForm)" routerLink="/livre-ressource-liste"> -->
                         Ajouter
