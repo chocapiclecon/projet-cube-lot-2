@@ -18,8 +18,8 @@
                     src="assets/ReSourcesRelationel.png"
                 />
                 <button class="buttonAccueil" routerLink="/accueil">Acceuil</button>
-                <button style="position: fixed; right: 70px; top: 120px;" routerLink="/connexion">Connexion</button>
-                <input style="position: fixed; right: 200px; top: 120px;" matInput  value="Recherche">
+                <button style="position: absolute; right: 70px; top: 120px;" routerLink="/connexion">Connexion</button>
+                <input style="position: absolute; right: 200px; top: 120px;" matInput  value="Recherche">
             </header>
             <form #monForm=ngForm (ngSubmit)="addRessource" class="otherContent">
                 <h1 for="title">Ajout d'une ressource dans livre</h1>
@@ -82,8 +82,8 @@
 <br>
 <div class="otherContent">
     <h3>Afficher la ressource que l'on ajoute : </h3>
+    <li *ngFor="let elt of ressources">
+        {{ elt.titre }}{{ elt.description }}{{ elt.id_ressource }}{{ elt.id_category }}{{ elt.partage }}
+    </li>
 </div>
-<li *ngFor="let elt of ressources">
-    {{ elt.titre }}{{ elt.description }}{{ elt.id_ressource }}{{ elt.id_category }}{{ elt.partage }}
-</li>
 <br>

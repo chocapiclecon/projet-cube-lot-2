@@ -18,8 +18,8 @@
                     src="assets/ReSourcesRelationel.png"
                 />
                 <button class="buttonAccueil" routerLink="/accueil">Acceuil</button>
-                <button style="position: fixed; right: 70px; top: 120px;" routerLink="/connexion">Connexion</button>
-                <input style="position: fixed; right: 200px; top: 120px;" matInput  value="Recherche">
+                <button style="position: absolute; right: 70px; top: 120px;" routerLink="/connexion">Connexion</button>
+                <input style="position: absolute; right: 200px; top: 120px;" matInput  value="Recherche">
             </header>
             <!-- Faire une liste de toutes les ressources -->
         </div>
@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let video of videos; index as i">
-                        <th scope="row">{{ i + 1 }}</th>
+                        <td scope="row">{{ i + 1 }}</td>
                         <td>
                             {{ video.name }}
                         </td>
