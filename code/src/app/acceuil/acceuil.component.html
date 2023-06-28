@@ -14,9 +14,9 @@
        src="assets/ReSourcesRelationel.png"
   />
 
-    <button class="Bouton BoutonAcceuil" (click)="AcceuilCliquable()">Acceuil</button>
-    <button class="Bouton BoutonConnection" (click)="ConnectionCliquable()" routerLink="/connexion">Connection</button>
-  <input class="rechercheRubrique" matInput  value="Recherche">
+    <button class="Bouton BoutonAcceuil" (click)="AcceuilCliquable()">Accueil</button>
+  <button style="position: absolute; right: 10px;" (click)="ConnectionCliquable()" routerLink="/connexion">Connexion</button>
+  <input style="position: absolute; right: 100px;" matInput  value="Recherche">
 </header>
 
 <div class="divAcceuil" >
@@ -39,16 +39,16 @@
   <table>
     <tr>
       <td>
-        <button class="BoutonsAcceuil " (click)="AcceuilCliquable()">Livre</button>
+        <button class="BoutonsAcceuil " (click)="AcceuilCliquable()" routerLink="/livre-ressource-list">Livre</button>
       </td>
       <td>
-        <button class="BoutonsAcceuil" (click)="ConnectionCliquable()">Son</button>
+        <button class="BoutonsAcceuil" (click)="ConnectionCliquable()" routerLink="/son-ressource-list">Son</button>
       </td>
       <td >
-        <button class="BoutonsAcceuil" (click)="ConnectionCliquable()">videos</button>
+        <button class="BoutonsAcceuil" (click)="ConnectionCliquable()" routerLink="/video-ressource-list">Vidéos</button>
       </td>
       <td >
-        <button class="BoutonsAcceuil" (click)="ConnectionCliquable()">Images</button>
+        <button class="BoutonsAcceuil" (click)="ConnectionCliquable()" routerLink="/image-ressource-list">Images</button>
       </td>
     </tr>
   </table>

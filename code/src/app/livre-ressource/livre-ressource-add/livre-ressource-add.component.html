@@ -1,0 +1,89 @@
+<html>
+    <body class="greyContent">
+        <div class="blueContent">
+            <header style="background-color: white;">
+                <img
+                    style="margin-left: 10px;"
+                    width="200"
+                    height="140"
+                    alt="Logo du ministère de la santé et de la prévention"
+                    src="assets/Ministère_de_la_Santé_et_de_la_Prévention.svg.png"
+                />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img
+                    style="margin-top: 10px;"
+                    width="170"
+                    height="150"
+                    alt="Logo Resources Relationel"
+                    src="assets/ReSourcesRelationel.png"
+                />
+                <button class="buttonAccueil" routerLink="/accueil">Acceuil</button>
+                <button style="position: absolute; right: 70px; top: 120px;" routerLink="/connexion">Connexion</button>
+                <input style="position: absolute; right: 200px; top: 120px;" matInput  value="Recherche">
+            </header>
+            <form #monForm=ngForm (ngSubmit)="addRessource" class="otherContent">
+                <h1 for="title">Ajout d'une ressource dans livre</h1>
+                <div>
+                    Titre * : <input type="text" name="titre" [(ngModel)]=ressource.titre required #titre="ngModel">
+                </div>
+                <div [hidden]="titre.valid || titre.pristine">
+                    Le titre est obligatoire
+                </div>
+                <div>
+                    Description * :
+                    <textarea name="description" [(ngModel)]=ressource.description required #description="ngModel" id="description" cols="30" rows="10"></textarea>
+                </div>
+                <div [hidden]="description.valid || description.pristine">
+                    La description est obligatoire
+                </div>
+                <div>
+                    Image : <input type="file" name="image" [(ngModel)]=ressource.image #image="ngModel">
+                </div>
+                <div>
+                    Ressource * :
+                    <select name="id_ressource" [(ngModel)]="ressource.id_ressource" #id_ressource="ngModel" required>
+                        <option *ngFor="let ressource of typeRessource" [ngValue]="ressource.value">{{ressource.viewValue}}</option>
+                      </select>
+                </div>
+                <div [hidden]="id_ressource.valid || id_ressource.pristine">
+                    La ressource est obligatoire
+                </div>
+                <div>
+                    Categorie * :
+                    <select name="id_category" [(ngModel)]="ressource.id_category" #id_category="ngModel" required>
+                        <option *ngFor="let ressource of categoryRessource" [ngValue]="ressource.value">{{ressource.viewValue}}</option>
+                      </select>
+                </div>
+                <div [hidden]="id_category.valid || id_category.pristine">
+                    La categorie est obligatoire
+                </div>
+                <div>
+                    Partage * :
+                    <select name="partage" [(ngModel)]="ressource.partage" #partage="ngModel" required>
+                        <option *ngFor="let ressourcePartage of partages" [ngValue]="ressourcePartage.value">{{ressourcePartage.viewValue}}</option>
+                      </select>
+                </div>
+                <div [hidden]="partage.valid || partage.pristine">
+                    Le partage est obligatoire
+                </div>
+                <br>
+                <div style="text-align: center">
+                <button routerLink="/livre-ressource-list">Retour</button>
+                    <button [disabled]=!monForm.valid (click)="addRessource(monForm)">
+                    <!-- <button [disabled]=!monForm.valid (click)="addRessource(monForm)" routerLink="/livre-ressource-liste"> -->
+                        Ajouter
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+
+<br>
+<div class="otherContent">
+    <h3>Afficher la ressource que l'on ajoute : </h3>
+    <li *ngFor="let elt of ressources">
+        {{ elt.titre }}{{ elt.description }}{{ elt.id_ressource }}{{ elt.id_category }}{{ elt.partage }}
+    </li>
+</div>
+<br>
